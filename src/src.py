@@ -26,7 +26,7 @@ def getPairs(tokens):
 pairs = getPairs(tokens)
 #print(sorted(((i,j) for j,i in pairs.items()), reverse=True))
 
-#maxPair = max(pairs, key = pairs.get)
+maxPair = max(pairs, key = pairs.get)
 #print(maxPair)
 
 def merge(tokens, pair, newId):
@@ -43,6 +43,7 @@ def merge(tokens, pair, newId):
 
 updatedTokens = merge(tokens, maxPair, 256)
 print(updatedTokens)
-
+print("--------------")
+print("length of updated tokens: ", len(updatedTokens))
 
 
