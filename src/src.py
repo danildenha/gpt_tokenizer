@@ -24,5 +24,25 @@ def getPairs(tokens):
     return count
 
 pairs = getPairs(tokens)
-print(sorted(((i,j) for i,j in pairs.items()), reverse=True))
+#print(sorted(((i,j) for j,i in pairs.items()), reverse=True))
+
+#maxPair = max(pairs, key = pairs.get)
+#print(maxPair)
+
+def merge(tokens, pair, newId):
+    newIds = []
+    i = 0
+    while i < len(tokens):
+        if i < len(tokens) - 1 and tokens[i] == pair[0] and tokens[i+1] == pair[1]:
+            newIds.append(newId)
+            i += 2
+        else:
+            newIds.append(tokens[i])
+            i += 1
+    return newIds
+
+updatedTokens = merge(tokens, maxPair, 256)
+print(updatedTokens)
+
+
 
