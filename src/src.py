@@ -35,6 +35,7 @@ def merge(tokens, pair, newId):
             i += 1
     return newIds
 # --------------------------------------------------------
+#merging the most frequent pairs of tokens
 new_tokens_number = 280
 number_iterations = new_tokens_number - 256
 tokens_copy = list(tokens)
@@ -46,7 +47,7 @@ for i in range(number_iterations):
     newId = 256 + i
     print("merging ", pair, " into a new token ", newId)
     tokens_copy = merge(tokens_copy, pair, newId)
-    merges[pair] = newId
+    merges[pair] = newId 
 
 print("length of tokens: ", len(merges)) #proving that tokens are longer than text
 print('-------------')
