@@ -7,7 +7,7 @@ for (p0, p1), idx in merges.items():
 def decode(ids):
   # given ids (list of integers), return Python string
   tokens = b"".join(vocab[idx] for idx in ids)
-  text = tokens.decode("utf-8", errors="replace")
+  text = tokens.decode("utf-8", errors="replace") #change errors to ignore errors
   return text
 
 print(decode([97]))
