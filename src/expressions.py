@@ -1,9 +1,13 @@
-#Practiving with regex from GPT-2
+#Practiving with regex from GPT-2 and GPT-4
 import regex as re
 import tiktoken
 
 # GPT-2 (does not merge spaces)
 enc = tiktoken.get_encoding("gpt2")
+print(enc.encode("    hello world!!!"))
+
+# GPT-4 (merges spaces)
+enc = tiktoken.get_encoding("cl100k_base")
 print(enc.encode("    hello world!!!"))
 
 gpt2pat = re.compile(r"""'s|'t|'re|'ve|'m|'ll|'d| ?\p{L}+| ?\p{N}+| ?[^\s\p{L}\p{N}]+|\s+(?!\S)|\s+""")
